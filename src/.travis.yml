@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+env:
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: m5T8ASzYVhTCaBWRFjQILZNbWwzGO5NYnUUPJNXsuT8LTnT08+6J19NCtA38m0YJDY6cRHlbBg9W/2Ornd96pOCLZRi1v4DwsketScEyTFGanadOKLDeW10xVWCoA5IIapXZIb2YwIbxVhxWuCCqAD4fBU0lva+EyQs2nx8g1796WeXuwC92UImqLBqp8YdNTlvhMGUoIaDYJE+CLsDFjjPUi/VpaD0LemmUosiC/58tQ3vUpgfEbqTdgKJPXgQCjAM0dm4Mca4IJSMqfhNYMpB87+fCv74nq8oufs6mAquuM6e3Gy8wo/Yjb8Zdftbqag45WK0yN5oyXaAI9GvPxkLSXSOTKZrlio/sSHOgu5XOwyb0GzKH00HnoG6FuiaNR42OvkqPX7eKhtI67pr3gnY2GcYs/ASNOzLwq+3t9MP2Fr7lL6WngyulCVpfGHkeGeIJd9BkVwz8CcYnMvVE2S9w4dfV7gerYR0XeXcccWDFrozTIjPUXfRmF6jv3fYL+vA1iC4BB/R2k/arhI1XrxgBVkiQEXGlGBqFX90x6USOXQmvNaWyrcXjl7DkXapwIx9x/uRmYan58mOV6rT43mmYncO2luiIvIo2yJlj4k14p6P0tStG1CnxLau0XVeXo01iweN9qny34xzxONjmlAcZww3NdrgaTpm15lTP7d0=
+  app: modern-headshots
+  on:
+    repo: anthonyphoto/Modern-Headshots
