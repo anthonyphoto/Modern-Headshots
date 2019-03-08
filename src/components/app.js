@@ -2,10 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
-import HeaderBar from './header-bar';
-import LandingPage from './landing-page';
-import Dashboard from './dashboard';
-import RegistrationPage from './registration-page';
+import HeaderBar from './common/header-bar';
+import FooterBar from './common/footer-bar';
+import LandingPage from './info/landing-page';
+import IntroPage from './info/intro-page';
+import LoginPage from './user/login-page';
+import SchedulePage from './schedule/schedule-page';
+import RegistrationPage from './user/registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -40,11 +43,14 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <div className='bg-white bd'>
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/register" component={RegistrationPage} />
+                <Route exact path="/schedule" component={SchedulePage} />
+                <Route exact path="/intro" component={IntroPage} />
+                <Route exact path="/signin" component={LoginPage} />
+                <Route exact path="/signup" component={RegistrationPage} />
+                <FooterBar />
             </div>
         );
     }

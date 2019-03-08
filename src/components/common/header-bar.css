@@ -1,0 +1,135 @@
+.hd {
+  /* box-sizing: content-box; */
+  display: flex;
+  position: fixed;
+  top: 0;
+  /* left: calc(width * 0.5 - 600 px); */
+  left: calc(50% - 550px);
+
+  justify-content: space-between;  
+  align-items: center;
+  height: 5rem;
+  max-width: 1100px;
+  width: 100%;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hd-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.hd-div {
+  text-align: right;
+  width: 70%;
+}
+
+.hd-div a:link, 
+.hd-div a:visited {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  color: #26211C;
+}
+
+.hd-div a:hover, 
+.hd-div a:focus {
+  color: #BFA48C;
+  transition: color 0.4s ease 0s;
+}
+.hd-div a:hover {
+  outline: none;
+}
+
+.hr-line{
+  position: fixed;
+  top: 5rem;
+  border-top: 1px solid rgba(38, 33, 28, 0.3);
+  height: 1px;
+  width: 100%;
+}
+
+.hd img {
+  width: 271px;
+  height: 29px;
+  display: block;
+  margin-left: 2%;
+}
+
+
+
+.hd-spc {
+  margin-left: 1%;
+  margin-right: 2%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .hd {
+    top: 0;
+    left: 0;
+  } 
+}
+
+
+/* mobile, grid Originally 640 */
+@media only screen and (max-width: 740px) {
+  .hd {
+    /* box-sizing: content-box; */
+    display: block;
+    position: static;
+    margin-top: 1rem;
+    /* top: 0; */
+    /* left: calc(width * 0.5 - 600 px); */
+    /* left: calc(50% - 550px); */
+  
+    /* justify-content: space-between;   */
+    /* align-items: center; */
+    /* height: 5rem; */
+    /* max-width: 1100px; */
+    /* display: static; */
+    width: 100%;
+    text-align: center;
+    
+  }
+
+  .hd-wrapper {
+    position: static;
+    /* top: 0; */
+    /* left: 0; */
+    /* height: 5rem; */
+    width: 100%;
+    /* z-index: 1; */
+  }
+  
+  .hd-div {
+    text-align: center;
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .hd-div a:link, 
+  .hd-div a:visited {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    color: #26211C;
+  }
+
+  .hd-div a:hover, 
+  .hd-div a:focus {
+    color: #BFA48C;
+    transition: color 0.4s ease 0s;
+  }
+  .hd-div a:hover {
+    outline: none;
+  }
+  
+}
+

@@ -1,0 +1,232 @@
+.bg-img {
+  background-image: url("/img/title-anthony.jpg");
+  /* background-repeat: no-repeat; */
+  /* background-position: center 0 top; */
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+
+}
+
+.info-div {
+  color: #FFF;
+  padding-left: 1%;
+}
+
+.box-div {
+  margin-left: 3%;
+  max-width: 500px;
+
+}
+
+.h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  letter-spacing: -0.01rem; 
+  line-height: 3rem;
+  color: #FFF;
+}
+
+.txt {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  letter-spacing: -0.0rem; 
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+}
+
+.txt a:link, 
+.txt a:visited {
+  text-decoration: underline;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+}
+
+.txt a:hover, 
+.txt a:focus {
+  color: #BFA48C;
+  transition: color 0.4s ease 0s;
+}
+
+.txt a:hover {
+  outline: none;
+}
+
+a:link.no-undln,
+a:visited.no-undln {
+  font-size: 2rem;
+  color: #F4B183;
+  text-decoration: none;
+  animation: blinker 1.5s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.int-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  letter-spacing: -0.01rem; 
+  line-height: 4rem;
+  color: #F4B183;
+  margin-top: 3rem;
+}
+
+li.txt {
+  list-style: none;
+  text-indent: -2rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+li.txt::before {
+    color: #FFF;  
+    content: ">"; 
+    font-size: 1em; 
+    padding-right: 1em; 
+}
+
+.info-spc-l {
+  margin-left: 2.6rem;
+  line-height: 0px;
+}
+
+.info-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.info-full-width {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.frame {
+  box-shadow: 3px 5px 10px #777777;
+  background-color: #FFF;
+  max-width: 100%;
+  padding: 1.2%;
+  
+  border: 1px solid #777777;
+
+}
+
+@media only screen and (max-width: 1200px) {
+  
+  
+}
+
+
+/* mobile, grid Originally 640 */
+@media only screen and (max-width: 740px) {
+  .bg-img {
+    background-image: url("/img/title-anthony.jpg");
+    background-size: cover;
+  }
+  /* .info-div {
+    margin-left: 0;
+    max-width: 100%;
+  
+  } */
+  .box-div {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+
+  .h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    letter-spacing: -0.01rem; 
+    line-height: 2rem;
+    color: #FFF;
+  }
+  
+  .txt {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.0rem; 
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    line-height: 1.6rem;
+  }
+  
+  .txt a:link, 
+  .txt a:visited {
+    text-decoration: underline;
+    display: inline-block;
+    vertical-align: middle;
+    color: #FFF;
+  }
+  
+  .txt a:hover, 
+  .txt a:focus {
+    color: #BFA48C;
+    transition: color 0.4s ease 0s;
+  }
+  
+  .txt a:hover {
+    outline: none;
+  }
+  
+  a:link.no-undln,
+  a:visited.no-undln {
+    font-size: 1.2rem;
+    color: #F4B183;
+    text-decoration: none;
+    animation: blinker 1.5s step-start infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .int-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.01rem; 
+    line-height: 3rem;
+    color: #F4B183;
+    margin-top: 2rem;
+  }
+  
+  li.txt {
+    list-style: none;
+    text-indent: -2rem;
+    margin-left: 0;
+    margin-bottom: 0.2rem;
+  }
+  
+  li.txt::before {
+      color: #FFF;  
+      content: ">"; 
+      font-size: 1em; 
+      padding-right: 0.5em; 
+  }
+  
+  .info-spc-l {
+    margin-left: 2.6rem;
+    line-height: 0px;
+  }
+  
+  .info-img {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .info-full-width {
+    width: 100%;
+    max-width: 1100px;
+  }
+  
+  
+}
+

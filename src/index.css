@@ -1,5 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: -0.02rem; 
+  /* color: #2a2c2d; */
+  color: #26211C;
 }
+
+.bg-white {
+  background-color: #FFF; 
+}
+  
+.bg-peach {
+  background-color: #FFEDDD; 
+}
+.bg-blk {
+  background-color: #26211C;
+}
+
+
+.test{
+  border: 1px solid red;
+
+}
+
+a:link, 
+a:visited {
+  text-decoration: none;
+  /* font-weight: 500; */
+  display: inline-block;
+  vertical-align: middle;
+  color: #0272b6;
+}
+
+a:hover, 
+a:focus  {
+  color: #00619A;
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 1px;
+}
+
+.ft-p {
+  font-family: 'Playfair Display', serif;
+}
+
+.ft-j {
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: -0.02rem; 
+}
+
+.i {
+  font-style: italic;
+}
+
+
+/* transparent border is used to fill some bg-color */
+.bd {
+  border: 1px solid transparent;
+}
+
+.row {
+  max-width: 1100px;
+  width: 100%;
+  margin: 5rem auto 6rem auto;
+}
+
+.mgt-6 {
+  margin-top: 6rem;
+}
+
+.mgt-4 {
+  margin-top: 4rem;
+}
+
+.mgt-2 {
+  margin-top: 2rem;
+}
+
+.fi {
+  -webkit-animation: fadein 1.5s; 
+          animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* Form to be edited later */
+label {
+  display: block;
+  margin: 6px;
+}
+
+input, textarea, button {
+  margin: 6px;
+  display: block;
+}
+
+.message {
+  padding: 12px 6px;
+}
+
+.message-success {
+  background-color: #5CB85C;
+  color: white;
+}
+
+.message-error, .form-error {
+  background-color: #d9534f;
+  color: white;
+}
+
+.form-error {
+  margin: 0 6px;
+  padding: 6px;
+  display: inline-block;
+}
+
+
+/* Non-mobile, grid 740 */
+@media only screen and (max-width: 760px) {
+
+  .row {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0rem auto 6rem auto;
+  }
+}
+
