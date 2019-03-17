@@ -54,11 +54,11 @@
   outline: none;
 }
 
-a:link.no-undln,
-a:visited.no-undln {
+a.no-undln:link,
+a.no-undln:visited {
   font-size: 2rem;
   color: #F4B183;
-  text-decoration: none;
+  text-decoration: none !important;
   animation: blinker 1.5s step-start infinite;
 }
 
@@ -125,7 +125,7 @@ li.txt::before {
 /* mobile, grid Originally 640 */
 @media only screen and (max-width: 740px) {
   .bg-img {
-    background-image: url("/img/title-anthony.jpg");
+    background-image: url("/img/title-anthony2.jpg");
     background-size: cover;
   }
   /* .info-div {

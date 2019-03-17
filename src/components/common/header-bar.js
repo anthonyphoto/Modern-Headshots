@@ -23,8 +23,8 @@ export function HeaderBar(props) {
     if (props.loggedIn) {
         myAcctLink = (
             <React.Fragment>
-                <Link to="/myacct">MY ACCOUNT</Link>
-                <a onClick={e=>logOut(e, props)} className="hd-spc" href="#">-</a>
+                <Link to="/myacct">MY ACCOUNT</Link> &nbsp;
+                <a onClick={e=>logOut(e, props)} className="hd-spc" href="#"><img className="signout" src="/img/signout.png" alt="sign out" /></a>
 
             </React.Fragment>
 
@@ -40,7 +40,7 @@ export function HeaderBar(props) {
         <header className={bgClass} role="banner">
             <div className="hd fi">
                 <Link to="/">
-                    <img src='/img/adlogo.png' alt='anthony photo logo' />
+                    <img className="logo" src='/img/adlogo.png' alt='anthony photo logo' />
                 </Link>
                 <nav className="hd-div" role="navigation">
                     <Link className="hd-spc" to="/intro">INTRO</Link>

@@ -19,6 +19,7 @@
   margin-top: 3rem;
   margin-bottom: 4rem;
 }
+
 .ma-box {
   /* width: 40%; */
   min-width: 340px;
@@ -79,17 +80,18 @@ a.ma-btn-lk:visited{
   text-align: center;
   padding: 2px 12px;
   line-height: 30px;
-  border: 1px solid rgba(38, 33, 28, 0.3);
+  /* border: 1px solid rgba(38, 33, 28, 0.3); */
   font-size: 0.9rem;
   color: #FFF;
-  background-color: #0272b6;
+  /* background-color: #90AFC5; */
+  background-color: #829DB1;
   font-family: 'Roboto', sans-serif;
   letter-spacing: -0.01rem; 
 }
 
 a.ma-btn-lk:hover,
 a.ma-btn-lk:focus{
-  background-color: #00619A;
+  background-color: #336B87;
   outline: none;
   transition: background-color 0.5s ease 0s;
 }
@@ -124,9 +126,9 @@ a.ma-img-lk:focus{
 .mg-h2 {
   font-family: 'Playfair Display', serif;
   /* font-family: 'Roboto', sans-serif; */
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   margin-top: 9rem;
-  letter-spacing: -0.03rem; 
+  letter-spacing: -0.01rem; 
   line-height: 3rem;
 }
 
@@ -222,10 +224,9 @@ li.ma-txt::before {
 .gallery-frame {
   box-shadow: 3px 5px 10px #777777;
   max-width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   border: 1px solid #777777;
 }
-
 
 @media only screen and (max-width: 1200px) {
   
@@ -235,6 +236,20 @@ li.ma-txt::before {
 
 /* mobile, grid Originally 740 */
 @media only screen and (max-width: 740px) {
+  .mg-h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    letter-spacing: -0.02rem; 
+  }
+
+  .ma-h5 {
+    font-size: 1.2rem;
+    letter-spacing: -0.02rem; 
+    line-height: 1rem;
+  }
+  .ma-flx {
+    display: block;
+  }
   
 }
 

@@ -35,7 +35,7 @@ export class MygalleryPage extends React.Component {
             
         const eventTitle = this.props.currEvent? this.props.currEvent.eventTitle : "";
         const sessionDate = this.props.currEvent? new Date(this.props.currEvent.sessionDate).toLocaleString('en-US', {timeZoneName: "short"}): "";
-
+        console.log("props", this.props); // const photoLink = this.props.photoLink?
         const photoJsx = this.props.photoLink.map((photo, ind) => {
             return (
                 <div key={ind} className="mg-photo-div">
@@ -48,7 +48,7 @@ export class MygalleryPage extends React.Component {
             <div className='bg-peach bd'>
 
                 <div className="hr-line"></div>
-                <div className="row mgt-6 fi">
+                <div className="row fi">
                 {/* {loadingJsx} */}
                     <div className="mg-al-m">
                         <div className="mg-h2 i">

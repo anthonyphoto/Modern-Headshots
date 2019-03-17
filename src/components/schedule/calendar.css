@@ -6,6 +6,10 @@
   float: left;
 }
 
+.cal-mobile-only{
+  display: none;
+}
+
 .cal-header{
   /* box-sizing: content-box; */
   position: fixed;
@@ -20,11 +24,13 @@
 .cal-flex {
   display: flex;
   margin-left: 13%;
-  margin-right: 5%;
+  margin-right: 3%;
   justify-content: space-between;
   align-items: baseline;
+}
 
-
+.cal-top-space {
+  margin-top: 6rem;
 }
 
 .side-box{
@@ -67,13 +73,14 @@
 
 .cal-cell-hd {
   width: 12.5%;
-  height: 3rem;
+  height: 3.5rem;
+  margin-top: 0.7rem;
   font-size: 1rem;
   /* padding-right: 1%; */
   float: left;
   text-align: center;
   vertical-align: middle;
-  line-height: 3rem;
+  line-height: 3.5rem;
   
   /* border-bottom: 1px solid rgba(38, 33, 28, 0.3); */
 }
@@ -92,17 +99,15 @@
 }
 
 .bg-available-sel {
-  background-color:#68A225;
-  /* background-color:#7CAA2D; */
-  /* background-color:#486B00; */
-  /* background-color:#4B7447; */
+
+  background-color:#336B87;
+  /* background-color:#68A225; */
   color: #FFF;
 }
 .bg-available {
 
-  background-color:#A2C523;
-  /* background-color:#486B00; */
-  /* background-color: green; */
+  background-color:#90AFC5;
+  /* background-color:#A2C523; */
 
 } 
 
@@ -117,7 +122,7 @@
 }
 
 .bg-result {
-  background-color: #26211C;
+  background-color: #888;
   color: #FFF;
 }
 .bg-booked-sel {
@@ -158,7 +163,7 @@ a.cal-cell:visited {
 
 a.bg-available:hover, 
 a.bg-available:focus  {
-  background-color: #68A225;
+  background-color: #336B87;
   outline: none;
   transition: background-color 0.5s ease 0s;
 
@@ -195,7 +200,10 @@ div.cal-cell:focus  {
   letter-spacing: -0.01rem; 
   line-height: 2.8rem;
   text-align: center;
-  color: #00619A;
+  /* color: #00619A; */
+  color: #336B87;
+  /* color: red; */
+
   /* color: #FFF; */
   /* margin-bottom:-1rem !important; */
   /* vertical-align: top; */
@@ -208,7 +216,7 @@ div.cal-cell:focus  {
   padding-bottom: 1rem;
   letter-spacing: -0.01rem; 
   text-align: center;
-  color: #00619A;
+  color: #336B87;
 }
 
 .cal-status-bk {
@@ -290,24 +298,128 @@ a.side-spc-l:visited {
 }
 
 @media only screen and (max-width: 1100px) {
+  
+  .cal-mobile-only{
+    display: flex;
+    justify-content: space-around;   
+    font-size: 1rem; 
+  }
+
   .cal-header{
-    position: fixed;
-    top: 6rem;
+
+    position: static;
+    top: 0rem;
     left:0;
-    width: 70%;
+    width: 100%;
   }    
 
   .side-box{
-    left: 70%;
+    display: none;
+    /* left: 70%;
     width: 30%;
     min-height: 10rem;
+    float: left; */
+  
+  } 
+
+  .cal-flex {
+    display: static;
+    margin-left: 13%;
+    margin-right: 3%;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .cal-box {
+    position: relative;
+    width: 95%;
+    /* min-width: 400px; */
+    float: none;
+  }
+  .cal-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: -0.01rem; 
+    line-height: 1rem;
+  }
+
+  .cal-header-menu select{
+    /* color: #26211C; */
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.01rem; 
+    font-size: 0.9rem;
+  }
+
+  .cal-header-menu a:link,
+  .cal-header-menu a:visited{
+    margin-left: 5px;
+    padding: 2px 6px;
+    border: 1px solid rgba(38, 33, 28, 0.3);
+    font-size: 0.9rem;
+    color: #26211C;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -0.01rem; 
+  }
+  .cal-header-menu a:hover,
+  .cal-header-menu a:focus{
+    background-color: #DDD;
+    outline: none;
+    transition: background-color 0.5s ease 0s;
+  }
+  
+  .cal-cell {
+    width: 12.5%;
+    height: 1.5rem;
+    /* padding-right: 1%; */
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5rem;
+    font-size: 0;
+
+    border-left: 1px solid rgba(38, 33, 28, 0.3);    
+    border-bottom: 1px solid rgba(38, 33, 28, 0.3);
+  }
+  .cal-cell-hr {
+    width: 12.5%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding-right: 1%;
     float: left;
   
-  }  
+  }
+  
+  .cal-cell-hd {
+    width: 12.5%;
+    height: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    /* padding-right: 1%; */
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5rem;
+    
+    /* border-bottom: 1px solid rgba(38, 33, 28, 0.3); */
+  }
+  
+  .cal-top-space {
+    margin-top: 4rem;
+  }
+  .bg-available {
+    font-size: 0.7rem;
+  }
+  .bg-booked {
+    font-size: 0.7rem;
+  }
+  
 }
-
 
 /* mobile, grid Originally 740 */
 @media only screen and (max-width: 740px) {
+  .cal-cell-hd {
+    font-size: 0.8rem;
+  }
+
 }
 

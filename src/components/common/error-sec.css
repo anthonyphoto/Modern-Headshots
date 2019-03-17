@@ -65,7 +65,26 @@
 
 /* mobile, grid Originally 740 */
 @media only screen and (max-width: 740px) {
+  .error-fixed {
+    position: static;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    z-index: 1;
+    /* z-index: 1; */
 
-  
+  }
+  .err-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    letter-spacing: -0.03rem; 
+    line-height: 3rem;
+    color: #ec4e3e;  
+  }
+  .error-fixed img{
+    width: 100%;
+  }
+
 }
 

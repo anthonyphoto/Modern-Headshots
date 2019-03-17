@@ -29,7 +29,7 @@ export class SchedulePage extends React.Component {
         const weekDay = new Date().toLocaleString('en-US', {weekday:"short"});
         const startWeek = weekDay === "Sun"? 1: 0;
         this.props.dispatch(updateStartWeek(startWeek));  // reset the starting week
-        
+
         if (!this.props.error) {
             document.getElementById('R4').scrollIntoView();
         }
@@ -75,7 +75,7 @@ export class SchedulePage extends React.Component {
             <div className="row fi">
             {loadingJsx}
 
-                <div className="mgt-6">Schedule</div>
+                <div className="mgt-6"></div>
                 <CalendarSec />
                 
                 <div className="side-box fi">

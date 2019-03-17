@@ -16,6 +16,7 @@ export function LoginPage(props) {
             <div className="row fi">
                 <div className="user-div">
                     <div className="user-h2">Sign In</div>
+                    <p className="user-notice">&nbsp;&nbsp;Demo Account: melody@demo.com / demo</p>
                     <LoginForm />
                     <br/>&nbsp;&nbsp; Don't have an account? &nbsp; <Link to="/signup">Sign up here</Link>
                 </div>

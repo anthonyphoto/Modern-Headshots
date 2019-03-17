@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5c7bf1b2936fd96128c2802b"},"firstName":"Anthony","lastName":"Kim","phone":"215-347-0245","admin":true,"username":"anthony011@gmail.com","password":"$2a$10$iY/A4CxxI0M.w6oIPTU2lOwBnl3bZptOaFiHFz3r4wUbZkKJN4WmW","__v":0}
+{"_id":{"$oid":"5c8daf68eae2ea303e5a8977"},"firstName":"Diane","lastName":"Kim","phone":"216-234-5678","admin":false,"username":"demo1@demo.com","password":"$2a$10$Z203uTLWevjKLl09CUZAP.q8GWY44uPlbXbAttSS1Y9DIWI9Yjc3G","__v":0}
+{"_id":{"$oid":"5c8dafcceae2ea303e5a8978"},"firstName":"Gromit","lastName":"Bong","phone":"888-123-4556","admin":false,"username":"demo2@gmail.com","password":"$2a$10$K2V9cDB7uXmsd6fahi/seufzg5F7eAog7BTbPH5I2qFnmLSILsU1e","__v":0}
+{"_id":{"$oid":"5c8db020eae2ea303e5a8979"},"firstName":"Demo","lastName":"User","phone":"267-222-1234","admin":false,"username":"demo3@gmail.com","password":"$2a$10$OA77l8YOTrPRT5DaU7yM4et2vHraco6hE2KywrX.igpZtjCCzrwnq","__v":0}
+{"_id":{"$oid":"5c8db0ebf5bcb93e0712f8bd"},"firstName":"Melody","lastName":"Demo","phone":"310-222-1234","admin":false,"username":"melody@demo.com","password":"$2a$10$znZn.ZCYj9CMNDenUkU5LOQNMGLMO3nq.QMPvwDgDKzrhjI0rN2MW","__v":0}

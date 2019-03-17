@@ -61,6 +61,9 @@ export function CalendarSec (props) {
     return (
         <div className="cal-box mgt-1">
             <div className='cal-header cell-font'>
+                <div className="cal-mobile-only">
+                * Please click an available slot on the calendar
+                </div>
                 <div className="mgt-2 cal-flex">
                     <div className='cal-h2'>{monLabel} {startYear}</div>
                     <div className='cal-header-menu'>Time zone &nbsp;
@@ -95,8 +98,9 @@ export function CalendarSec (props) {
                     Sun {getDayHeaderJsx(props, currDay, arrDates, 6)}
                 </div>
             </div>
-
-            {arrGrid}
+            <div className="cal-top-space">
+                {arrGrid}
+            </div>
 
             <div className="clear-float"></div>
 

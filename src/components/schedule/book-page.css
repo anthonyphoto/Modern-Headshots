@@ -6,9 +6,6 @@
   float: left;
 }
 
-
-
-
 .book-session-info {
   position: absolute;
   top: 4rem;
@@ -33,11 +30,18 @@
   line-height: 2.3rem;
 }
 
+.book-txt {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+}
+
 .book-font li {
   list-style: none;
   text-indent: -2rem;
   margin-left: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .book-font li::before {
@@ -64,10 +68,19 @@
 }
 
 @media only screen and (max-width: 1100px) {
+  .book-div {
+    margin-top: 6rem;
+  }
 }
 
 
 /* mobile, grid Originally 740 */
 @media only screen and (max-width: 740px) {
+  .book-div {
+    position: relative;
+    margin-top: 8rem;
+    width: 100%;
+  }
+  
 }
 

@@ -32,6 +32,7 @@ export class LoginForm extends React.Component {
                     type="text"
                     name="username"
                     id="username"
+                    placeholder="melody@demo.com"
                     validate={[required, nonEmpty, email]}
                 />
 
@@ -41,6 +42,7 @@ export class LoginForm extends React.Component {
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="demo"
                     validate={[required, nonEmpty]}
                 />
                 <button disabled={this.props.pristine || this.props.submitting}>

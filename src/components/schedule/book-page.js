@@ -74,13 +74,10 @@ export class BookPage extends React.Component {
                     <div className="book-session-info">
                         <SideSec />
                     </div>
-                    {/* Requested Session Time: 
-                        { this.props.currEvent? this.props.currEvent.sessionDate: null } */}
-                        
                 </div>
                 <div className="book-div">
-                    <div className="book-h3">
-                    </div>
+                    {/* <div className="book-h3">
+                    </div> */}
                     <div className="book-font mgt-1">
                         {
                             this.props.currUser?
@@ -97,9 +94,9 @@ export class BookPage extends React.Component {
                                         <li>
                                             Plan to arrive 10 min early before the scheduled time
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             If you want to update your contact info, please go to <Link className="book-spc-l" to="/myacct">My Account</Link> page 
-                                        </li>
+                                        </li> */}
                                         <li>
                                             Address: 61 Llanfair Road, Ardmore, PA 19003<br/>
                                         </li>
@@ -114,17 +111,20 @@ export class BookPage extends React.Component {
                                     </div>
                             :
                                 <div>
-                                    You need to Login first before booking a session.
+                                    Please sign in first
                                     {
                                         this.state.signType ==='signin'?
                                             <div>
                                                 <LoginForm />
-                                                <a href="#" onClick={e=>this.setSignType(e, "signup")}>New User</a>
+                                                <p className="book-txt">&nbsp;&nbsp;&nbsp; Don't have an account? &nbsp;
+                                                <a href="#" onClick={e=>this.setSignType(e, "signup")}>Sign up here</a></p>
                                             </div>
                                         :
                                             <div>
                                                 <RegistrationForm />
-                                                <a href="#" onClick={e=>this.setSignType(e, "signin")}>Log in</a>
+                                                <p className="book-txt">&nbsp;&nbsp;&nbsp; Already have an account?
+                                                 &nbsp;
+                                                <a href="#" onClick={e=>this.setSignType(e, "signin")}>Sign in</a></p>
                                             </div>
                                     }
                                 </div>

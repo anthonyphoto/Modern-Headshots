@@ -12,6 +12,7 @@ export class MyacctPage extends React.Component {
         // console.log("myId", this.props.currUser.id);
         window.scrollTo(0,0);
         this.props.dispatch(fetchMyEvents(this.props.currUser.id));
+        this.props.dispatch(resetEventState());
     }
 
     componentWillUnmount() {

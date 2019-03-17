@@ -48,13 +48,22 @@
 }
 
 
-.hd img {
+img.logo {
   width: 271px;
   height: 29px;
   display: block;
   margin-left: 2%;
 }
 
+img.signout {
+  width: 22px;
+}
+
+img.signout:hover,
+img.signout:focus {
+  opacity: 0.5;
+  transition: opacity 0.4s ease 0s;
+}
 
 
 .hd-spc {

@@ -82,7 +82,7 @@ input.disabled:focus {
   height: 3rem;
   width: 300px;
   margin-top: 4%;
-  background-color: #3c8ac9; 
+  background-color: #829DB1; 
   /* border: 2px solid #337ab4; */
   color: #FFF;
   font-size: 1rem;
@@ -104,7 +104,7 @@ input.disabled:focus {
 .form button:hover,
 .form button:focus,
 .form button:active {
-  background-color: #337ab4;
+  background-color: #336B87;
   /* background-color: red; */
   outline: none;
   transition: background-color 0.5s ease 0s;
