@@ -52,8 +52,16 @@ export function CalendarSec (props) {
 
     // console.log(arrGrid);
     
-    const timeZone = ['America/Los_Angeles', 'America/Denver', 'America/Chicago', 'America/New_York'];
-    const tzJsx = timeZone.map((tz, ind) => (<option key={`${tz}${ind}`} value={tz} >{tz}</option>));
+    // const timeZone = ['America/Los_Angeles', 'America/Denver', 'America/Chicago', 'America/New_York'];
+    // const tzJsx = timeZone.map((tz, ind) => (<option key={`${tz}${ind}`} value={tz} >{tz}</option>));
+
+    const timeZone = [
+            ['America/Los_Angeles', 'Pacific Time (Los Angeles)'], 
+            ['America/Denver', 'Mountain Time (Denver)'], 
+            ['America/Chicago', 'Central Time (Chicago)'], 
+            ['America/New_York', 'Eastern Time (Philadelphia)']
+            ];
+    const tzJsx = timeZone.map((tz, ind) => (<option key={`${tz}${ind}`} value={tz[0]} >{tz[1]}</option>));
 
     // console.log("tz", tzJsx);
 

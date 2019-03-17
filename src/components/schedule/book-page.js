@@ -64,7 +64,7 @@ export class BookPage extends React.Component {
                     {
                         status === "Available"?
                             <div className="book-h3 i book-al-r">
-                                Let's book to make you look amazing
+                                Let's plann to make you look amazing
                             </div>
                         :
                             <div className="book-h3 i book-al-r">
