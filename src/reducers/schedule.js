@@ -111,7 +111,11 @@ export default function reducer(state = initialState, action) {
 
         case actions.RESET_EVENT_STATE:
           // return state; // testing purpose for error handling
-          return initialState;   
+          // return initialState;   
+          return Object.assign({}, initialState, {
+            loading: state.loading,
+            error: state.error
+          });
 
         default: 
             return state;

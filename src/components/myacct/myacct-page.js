@@ -5,6 +5,7 @@ import ErrorSec from '../common/error-sec';
 import LoadingSec from '../common/loading-sec';
 import MyeventCard from "./myevent-card";
 import requiresLogin from '../user/requires-login';
+import {Link} from 'react-router-dom';
 import './myacct-page.css';
 
 export class MyacctPage extends React.Component {
@@ -87,7 +88,24 @@ export class MyacctPage extends React.Component {
                     
                         <div className="ma-box">
                             <div className="ma-h4 i ma-al-m">Upcoming Events</div>
-                            {futureEvents}
+                            {
+                                this.props.futureEvents.length == 0? 
+                                <div className="event-box">
+                                    <div className="ev-title">
+                                        You have no reservation.
+                                    </div>
+                                    <div className="ev-detail">
+                                        Please click the button below to book a new session.
+                                    </div>
+                                    <div className="ev-bottom">
+                                        <div> </div>
+                                            <Link className="ma-btn-lk" to='/book' >Schedule</Link>
+                                    </div>
+                                </div>
+                                :
+                                    futureEvents
+                            }
+                            {/* {futureEvents} */}
                         </div>
 
 
