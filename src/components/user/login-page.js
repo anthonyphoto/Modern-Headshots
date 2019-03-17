@@ -1,20 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-
 import LoginForm from './login-form';
+import "./user.css";
 
 export function LoginPage(props) {
     // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/myacct" />;
     }
 
     return (
-        <div className="row">
-            <h2>Sign-in</h2>
-            <LoginForm />
-            <Link to="/register">Register</Link>
+        <div>
+            <div className="hr-line"></div>
+            <div className="row fi">
+                <div className="user-div">
+                    <div className="user-h2">Sign In</div>
+                    <LoginForm />
+                    <br/>&nbsp;&nbsp; Don't have an account? &nbsp; <Link to="/signup">Sign up here</Link>
+                </div>
+            </div>
         </div>
     );
 }

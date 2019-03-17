@@ -1,0 +1,240 @@
+
+
+
+.ma-al-m {
+  /* width: 500px; */
+  padding-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mg-al-m {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mg-photo-div {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+.ma-box {
+  /* width: 40%; */
+  min-width: 340px;
+  padding: 3%;
+  min-height: 5rem;
+}
+
+.event-box {
+  position: relative;
+  width: 370px;
+  height: 150px;
+  padding: 15px;
+  background-color: #FFF;
+  margin: 3rem 0;
+  box-shadow: 0px 0px 5px #D0D0D0;
+  border: 0px solid #DDD;
+}
+
+.ev-title {
+  padding: 5px;
+  background-color: #FFF;
+  margin: 0;  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.02rem; 
+}
+
+.ev-detail {
+  padding-left: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: -0.01rem;
+  line-height: 2rem; 
+}
+
+.ev-bottom {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 370px;
+  height: 60px;
+  background-color: #EEE;
+  font-family: 'Roboto', sans-serif;
+  /* color: #FFF; */
+  color:  #646464;
+  letter-spacing: -0.01rem; 
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 0.9rem;
+  line-height: 60px;
+}
+
+a.ma-btn-lk:link,
+a.ma-btn-lk:visited{
+  width: 120px;
+  text-align: center;
+  padding: 2px 12px;
+  line-height: 30px;
+  border: 1px solid rgba(38, 33, 28, 0.3);
+  font-size: 0.9rem;
+  color: #FFF;
+  background-color: #0272b6;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -0.01rem; 
+}
+
+a.ma-btn-lk:hover,
+a.ma-btn-lk:focus{
+  background-color: #00619A;
+  outline: none;
+  transition: background-color 0.5s ease 0s;
+}
+
+a.ma-img-lk:link,
+a.ma-img-lk:visited{
+  opacity: 0.8;
+  height: 35px; 
+  vertical-align: middle;
+}
+
+a.ma-img-lk:hover,
+a.ma-img-lk:focus{
+  outline: none;
+  opacity: 1;
+}
+
+
+
+.ma-flx {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.ma-spc-l {
+  margin-left: 40px;
+  margin-right: auto;
+
+}
+
+.mg-h2 {
+  font-family: 'Playfair Display', serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 2.8rem;
+  margin-top: 9rem;
+  letter-spacing: -0.03rem; 
+  line-height: 3rem;
+}
+
+.ma-h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem; 
+  line-height: 3rem;
+}
+
+.ma-h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: -0.0rem; 
+  line-height: 2rem;
+}
+
+.ma-h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: -0.02rem; 
+  line-height: 2rem;
+}
+
+.mg-txt {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  letter-spacing: -0.0rem; 
+  font-size: 0.9rem;
+  line-height: 1.9rem;
+}
+
+.ma-txt {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  letter-spacing: -0.0rem; 
+  font-size: 0.9rem;
+  line-height: 1.9rem;
+}
+
+.bg-gray {
+  background-color: #EEE;
+  /* background-color: #646464; */
+  color: #646464;
+
+}
+
+li.ma-txt {
+  list-style: none;
+  text-indent: -1.6rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+li.ma-txt::before {
+    color: #ec4e3e;  
+    content: ">"; 
+    font-size: 1em; 
+    padding-right: 1em; 
+}
+
+
+
+.txt a:link, 
+.txt a:visited {
+  text-decoration: underline;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+}
+
+.txt a:hover, 
+.txt a:focus {
+  color: #BFA48C;
+  transition: color 0.4s ease 0s;
+}
+
+.txt a:hover {
+  outline: none;
+}
+
+.mu {
+  background-image: url(/img/mark-underline.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  display: inline-block;
+  margin-bottom: .625rem;
+  padding-bottom: .5rem;
+  padding-right: 0.5rem;
+}
+
+.gallery-frame {
+  box-shadow: 3px 5px 10px #777777;
+  max-width: 100%;
+  max-width: 1000px;
+  border: 1px solid #777777;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  
+  
+}
+
+
+/* mobile, grid Originally 740 */
+@media only screen and (max-width: 740px) {
+  
+}
+

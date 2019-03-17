@@ -5,46 +5,54 @@ import {clearAuth} from '../../actions/auth';
 import {clearAuthToken} from '../../local-storage';
 import './header-bar.css';
 
-export class HeaderBar extends React.Component {
-    logOut() {
-        this.props.dispatch(clearAuth());
-        clearAuthToken();
-    }
+function logOut(e, props){
+    e.preventDefault();
+    props.dispatch(clearAuth());
+    clearAuthToken();
+}
 
-    render() {
-        // Only render the log out button if we are logged in
-        let logOutButton, myAcctLink;
-        if (this.props.loggedIn) {
-            logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
-            );
-            myAcctLink = (
-                <a onClick={()=>this.logOut()} className="hd-spc" href="#">SIGN OUT</a>
-            );
-        }
-        else {
-            myAcctLink = (
-                <Link className="hd-spc" to="/signin">SIGN IN </Link>
-            );
-        }
-        return (
-            <header className="hd-wrapper bg-white" role="banner">
-                <div className="hd fi">
-                    <Link to="/">
-                        <img src='/img/adlogo.png' alt='anthony photo logo' />
-                    </Link>
-                    <nav className="hd-div" role="navigation">
-                        <Link className="hd-spc" to="/intro">INTRO</Link>
-                        <Link className="hd-spc" to="/schedule">SCHEDULE</Link>
-                        {myAcctLink}
-                    </nav>
-                </div>
-                {/* <div className="hr-linew"></div> */}
-            </header>
+export function HeaderBar(props) {
+    // console.log("header props", props);
+    // const bgClass = `${props.currPath}`;
+    // const bgClass ="hd-wrapper bg-peach";
+    const bgClass = props.currPath.slice(0, 7) === "/myacct"? 
+                "hd-wrapper bg-peach" : "hd-wrapper bg-white";
+
+    let logOutButton, myAcctLink;
+
+    if (props.loggedIn) {
+        myAcctLink = (
+            <React.Fragment>
+                <Link to="/myacct">MY ACCOUNT</Link>
+                <a onClick={e=>logOut(e, props)} className="hd-spc" href="#">-</a>
+
+            </React.Fragment>
+
         );
     }
+    else {
+        myAcctLink = (
+            <Link className="hd-spc" to="/signin">SIGN IN </Link>
+        );
+    }
+
+    return (
+        <header className={bgClass} role="banner">
+            <div className="hd fi">
+                <Link to="/">
+                    <img src='/img/adlogo.png' alt='anthony photo logo' />
+                </Link>
+                <nav className="hd-div" role="navigation">
+                    <Link className="hd-spc" to="/intro">INTRO</Link>
+                    <Link className="hd-spc" to="/calendar">SCHEDULE</Link>
+                    {myAcctLink}
+                </nav>
+            </div>
+            {/* <div className="hr-linew"></div> */}
+        </header>
+    );
 }
-                        // {/* {logOutButton} */}
+
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null

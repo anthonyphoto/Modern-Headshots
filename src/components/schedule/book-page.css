@@ -1,0 +1,73 @@
+.book-div {
+  position: relative;
+  max-width: 550px;
+  width: 50%;
+  margin: 3rem auto 10rem auto;
+  float: left;
+}
+
+
+
+
+.book-session-info {
+  position: absolute;
+  top: 4rem;
+  right: 3%;
+  width: 330px;
+}
+.book-clear-float {
+  clear: left;
+}
+
+.book-al-r {
+  text-align: right;
+  margin-right: 8%;
+}
+
+
+.book-font {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  letter-spacing: -0.0rem;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+}
+
+.book-font li {
+  list-style: none;
+  text-indent: -2rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+.book-font li::before {
+    color: #ec4e3e;  
+    content: ">"; 
+    font-size: 1em; 
+    padding-right: 1em; 
+}
+
+.book-spc-l {
+  margin-left: 2rem;
+  line-height: 1.9px;
+}
+
+.book-h3 {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: -0.01rem; 
+  line-height: 2rem;
+  /* margin-bottom:-1rem !important; */
+  /* vertical-align: top; */
+  /* color: #FFF; */
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+
+/* mobile, grid Originally 740 */
+@media only screen and (max-width: 740px) {
+}
+

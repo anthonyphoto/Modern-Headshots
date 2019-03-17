@@ -1,0 +1,71 @@
+
+.err-div {
+  margin: 80rem auto;
+}
+
+.err-box {
+  min-width: 370px;
+  max-width: 500px;
+  margin: 12rem auto 33rem auto;
+}
+
+.error-fixed {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 1;
+
+}
+
+.err-h2 {
+  font-family: 'Playfair Display', serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  letter-spacing: -0.03rem; 
+  line-height: 3rem;
+  color: #ec4e3e;  
+}
+
+.loading-h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  margin-top: 0rem;
+  letter-spacing: -0.02rem; 
+  line-height: 2.5rem;
+  color: #ec4e3e;  
+}
+
+.loading-box {
+  min-width: 370px;
+  max-width: 500px;
+  margin: 6rem auto 33rem auto;
+}
+
+.mgb-20 {
+  padding-bottom: 50rem;
+}
+
+.loading-sec {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  opacity: 0.7;
+  /* margin-top: -158px; */
+  margin-left: -128px;
+  z-index: 1;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  
+}
+
+
+/* mobile, grid Originally 740 */
+@media only screen and (max-width: 740px) {
+
+  
+}
+

@@ -16,7 +16,7 @@ export const isTrimmed = value =>
 export const email = value =>
     /^\S+@\S+$/.test(value) ? undefined : 'Must be a valid email address';
 
-export const phone = value => {
+export const validPhone = value => {
      return value? 
       /(\d{3}-\d{3}-\d{4})|(\d{10,})/.test(value) ? undefined : 'Must be a valid phone number'
       : undefined;

@@ -8,6 +8,9 @@ import LandingPage from './info/landing-page';
 import IntroPage from './info/intro-page';
 import LoginPage from './user/login-page';
 import SchedulePage from './schedule/schedule-page';
+import BookPage from './schedule/book-page';
+import MyacctPage from './myacct/myacct-page';
+import MygalleryPage from './myacct/mygallery-page';
 import RegistrationPage from './user/registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
@@ -42,12 +45,19 @@ export class App extends React.Component {
     }
 
     render() {
+        console.log('prop', this.props.location.pathname)
+        const bgClass = this.props.location.pathname.slice(0,7) === "/myacct"? 
+            "bg-peach bd" : "bg-white bd";
+
         return (
-            <div className='bg-white bd'>
-                <HeaderBar />
+            <div className={bgClass}>
+                <HeaderBar currPath={this.props.location.pathname} />
                 <Route exact path="/" component={LandingPage} />
-                <Route exact path="/schedule" component={SchedulePage} />
                 <Route exact path="/intro" component={IntroPage} />
+                <Route exact path="/calendar" component={SchedulePage} />
+                <Route exact path="/book" component={BookPage} />
+                <Route exact path="/myacct" component={MyacctPage} />
+                <Route exact path="/myacct/gallery/:id" component={MygalleryPage} />
                 <Route exact path="/signin" component={LoginPage} />
                 <Route exact path="/signup" component={RegistrationPage} />
                 <FooterBar />

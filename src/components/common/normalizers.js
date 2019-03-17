@@ -2,6 +2,7 @@ export const normalizePhone = (value, previousValue) => {
    if (!value) {
         return value // you can set a placeholder
     }
+    console.log("here?");
     const onlyNums = value.replace(/[^\d]/g, '')
     if (!previousValue || value.length > previousValue.length) {
         // typing forward

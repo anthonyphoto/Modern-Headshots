@@ -100,10 +100,6 @@ li.list::before {
     top: 0em; 
 }
 
-.al-r {
-  text-align: right;
-}
-
 .arrow {
   /* font-weight: 800; */
   /* font-style: normal; */

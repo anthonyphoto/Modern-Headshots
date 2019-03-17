@@ -3,8 +3,6 @@ import React from 'react';
 import './footer-bar.css';
 
 export default function FooterBar (){
-    console.log('test');
-    
     return (
         <footer className="bg-blk bd" role="contentinfo">
             <div className="ft-div">

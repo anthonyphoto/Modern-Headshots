@@ -11,27 +11,26 @@ export default class Input extends React.Component {
         const Element = this.props.element || 'input';
         let error;
         if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
+            error = <span className="form-error fi">{this.props.meta.error}</span>;
         }
 
         let warning;
         if (this.props.meta.touched && this.props.meta.warning) {
             warning = (
-                <div className="form-warning">{this.props.meta.warning}</div>
+                <span className="form-warning fi">{this.props.meta.warning}</span>
             );
         }
-        // // console.log(1, this.props.input);
-        // if (this.props.init && !this.props.value){
-        //     console.log(4, this.props.name);
-        //     this.props.change("phone", this.props.init);
-        // }
-        // console.log(1, this.props.input.name, this.props.input.value)
-//console.log(1, this.state);
+
+        // console.log(1, this.props);
         
         return (
             <div className="form-input">
                 <label htmlFor={this.props.input.name}>
                     {this.props.label}
+                    {
+                        this.props.required?
+                        <span className='req'> *</span> : <span></span>
+                    }
                     {error}
                     {warning}
                 </label>
@@ -39,7 +38,9 @@ export default class Input extends React.Component {
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
+                    className={this.props.className}
                     placeholder={this.props.placeholder}
+                    rows={this.props.rows}
                     ref={input => (this.input = input)
                     }
                 />
@@ -47,3 +48,5 @@ export default class Input extends React.Component {
         );
     }
 }
+// value={this.props.predefined}
+                    

@@ -47,13 +47,6 @@
   outline: none;
 }
 
-.hr-line{
-  position: fixed;
-  top: 5rem;
-  border-top: 1px solid rgba(38, 33, 28, 0.3);
-  height: 1px;
-  width: 100%;
-}
 
 .hd img {
   width: 271px;
