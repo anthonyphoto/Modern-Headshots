@@ -98,10 +98,6 @@ export default function reducer(state = initialState, action) {
           return Object.assign({}, state, {
               redirect: null
           });
-          case actions.RESET_REDIRECT:
-          return Object.assign({}, state, {
-              redirect: null
-          });
 
         case actions.RESET_EVENT_STATE:
           return Object.assign({}, initialState, {

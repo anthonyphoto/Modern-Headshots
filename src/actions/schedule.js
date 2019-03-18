@@ -55,7 +55,7 @@ export const updateStartWeek = startWeek => ({
     startWeek
 });
 
-export const CLICK_EVENT = 'SELECT_EVENT';
+export const CLICK_EVENT = 'CLICK_EVENT';
 export const clickEvent = gridIndex => ({
     type: CLICK_EVENT,
     gridIndex
