@@ -4,7 +4,6 @@ import CalendarCell from './calendar-cell';
 import {updateStartWeek, updateTimeZone} from '../../actions/schedule';
 import {getWeeklyDates} from './calendar-utils';
 import './calendar.css';
-import reducer from '../../reducers/schedule';
 
 const gotoPrevWeek = (e, props) => {
     e.preventDefault();
@@ -30,10 +29,7 @@ const getDayHeaderJsx = (props, currDay, arrDates, ind) =>
 export function CalendarSec (props) {
 
     const { startYear, startMon, startDay, shortTZ, currDay, arrDates } = getWeeklyDates(props.startWeek, props.timeZone);
-    // console.log(startYear, startMon, startDay, shortTZ, arrDates);
-
     const arrGrid = [];
-
     const timeLabel = ['MIDNIGHT', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', 'NOON', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM'];
 
     for (let hr = 0; hr < 24; hr++){
@@ -48,12 +44,7 @@ export function CalendarSec (props) {
     }
 
     const monIndex = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const monLabel = monIndex.find((a, ind)=> ind === parseInt(startMon) - 1);
-
-    // console.log(arrGrid);
-    
-    // const timeZone = ['America/Los_Angeles', 'America/Denver', 'America/Chicago', 'America/New_York'];
-    // const tzJsx = timeZone.map((tz, ind) => (<option key={`${tz}${ind}`} value={tz} >{tz}</option>));
+    const monLabel = monIndex.find((a, ind)=> ind === parseInt(startMon, 10) - 1);
 
     const timeZone = [
             ['America/Los_Angeles', 'Pacific Time (Los Angeles)'], 
@@ -62,9 +53,6 @@ export function CalendarSec (props) {
             ['America/New_York', 'Eastern Time (Philadelphia)']
             ];
     const tzJsx = timeZone.map((tz, ind) => (<option key={`${tz}${ind}`} value={tz[0]} >{tz[1]}</option>));
-
-    // console.log("tz", tzJsx);
-
 
     return (
         <div className="cal-box mgt-1">
@@ -78,9 +66,9 @@ export function CalendarSec (props) {
                         <select defaultValue='America/New_York' onChange={e=>handleTimeZoneChange(e.target.value, props)} id="timeZone">
                             {tzJsx}
                         </select> &nbsp; &nbsp;
-                        <a href="#" onClick={e => handleWeekUpdate(e, props, props.startWeek - 1)}>&lt;</a> 
-                        <a href="#" onClick={e => handleWeekUpdate(e, props, 0)}>Today</a>
-                        <a href="#" onClick={e => handleWeekUpdate(e, props, props.startWeek + 1)}>&gt;</a> 
+                        <a href="prev" onClick={e => handleWeekUpdate(e, props, props.startWeek - 1)}>&lt;</a> 
+                        <a href="today" onClick={e => handleWeekUpdate(e, props, 0)}>Today</a>
+                        <a href="next" onClick={e => handleWeekUpdate(e, props, props.startWeek + 1)}>&gt;</a> 
                     </div>
                 </div>
                 <div className='cal-cell-hd'> </div>
@@ -109,25 +97,18 @@ export function CalendarSec (props) {
             <div className="cal-top-space">
                 {arrGrid}
             </div>
-
             <div className="clear-float"></div>
-
-            {/* {JSON.stringify(props.grid)} */}
         </div>
     );
-    
 }
 
 const mapStateToProps = state => {
-    // console.log("state", state.schedule);
-    const {events, grid, startWeek, currEvent, hoverEvent} = state.schedule;
+    const {events, grid, startWeek, currEvent} = state.schedule;
     return {
         events,
         grid,
         startWeek,
         currEvent,
-        hoverEvent,
-        sessionDate: events[3]?events[3].sessionDate : null,
         error: state.schedule.error,
         timeZone: state.schedule.timeZone,
         loading: state.schedule.loading

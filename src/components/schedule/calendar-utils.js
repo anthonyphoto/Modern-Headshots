@@ -4,7 +4,7 @@ export const getWeeklyDates = (week = 0, timeZone) => {
         timeZone: timeZone
     }
     const currDt = new Date();
-    const currDay = parseInt(currDt.toLocaleString('en-US', {...tz, ...{day: "2-digit"}}));
+    const currDay = parseInt(currDt.toLocaleString('en-US', {...tz, ...{day: "2-digit"}}), 10);
     const weekDay = currDt.toLocaleString('en-US', {...tz, ...{weekday:"short"}});
     const weekDayIndex = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     const offsetToMon = weekDayIndex.indexOf(weekDay);
@@ -21,7 +21,7 @@ export const getWeeklyDates = (week = 0, timeZone) => {
     for (let i = 0; i < 7; i++){
         tmpDt = new Date(tmpDt.setDate((startDt.getDate() + i)));
         // console.log(tmpDt);
-        arrDates.push(parseInt(tmpDt.toLocaleString('en-US', {...tz, ...{day: "2-digit"}})));
+        arrDates.push(parseInt(tmpDt.toLocaleString('en-US', {...tz, ...{day: "2-digit"}}), 10));
     }
 
     return {
@@ -134,7 +134,7 @@ export const getGrid = (events, timeZone, startWeek) => {
             email: event.submitter.username,
             updated: convertToLocal(new Date(event.updated), timeZone)
         }
-        grid[weekday][parseInt(hour)] = gridEvent;
+        grid[weekday][parseInt(hour, 10)] = gridEvent;
         
         // const {year, month, day, hour: hr, shortTZ} = gridEvent.sessionDate;
         // const newDt = new Date(`${month}/${day}/${year}, ${hr}:00:00 ${shortTZ}`);
@@ -146,7 +146,7 @@ export const getGrid = (events, timeZone, startWeek) => {
 export const getPastEvents = events => {
     const now = new Date();
     return events.filter(event => 
-        (now > new Date(event.sessionDate) && event.status != "Cancelled"))
+        (now > new Date(event.sessionDate) && event.status !== "Cancelled"))
                 .sort((a, b) => new Date(b.sessionDate) - new Date(a.sessionDate) );
 
 }
@@ -154,7 +154,7 @@ export const getPastEvents = events => {
 export const getFutureEvents = events => {
     const now = new Date();
     return events.filter(event => 
-        (now <= new Date(event.sessionDate) && event.status != "Cancelled"))
+        (now <= new Date(event.sessionDate) && event.status !== "Cancelled"))
                 .sort((a, b) => new Date(a.sessionDate) - new Date(b.sessionDate) );
 
 

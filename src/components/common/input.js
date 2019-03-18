@@ -20,8 +20,6 @@ export default class Input extends React.Component {
                 <span className="form-warning fi">{this.props.meta.warning}</span>
             );
         }
-
-        // console.log(1, this.props);
         
         return (
             <div className="form-input">
@@ -48,5 +46,4 @@ export default class Input extends React.Component {
         );
     }
 }
-// value={this.props.predefined}
                     

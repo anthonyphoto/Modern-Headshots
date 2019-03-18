@@ -17,8 +17,6 @@ export class SideSec extends React.Component {
             status = this.props.currEvent.status;
             id = this.props.currEvent.id;
         }
-        console.log("currEvent from side", this.props.currEvent);
-        console.log("currUser from side", this.props.currUser);
         return (
             <div className=' fi'>
                 {
@@ -86,17 +84,12 @@ export class SideSec extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log("state from side", state);
-    const {events} = state.schedule;
     return {
-        events,
         currUser: state.auth.currentUser,
         currEvent: state.schedule.currEvent,
-        timeZone: state.schedule.timeZone,
-        loading: state.schedule.loading
+        timeZone: state.schedule.timeZone
     };
 
 };
 
 export default connect(mapStateToProps)(SideSec);
-                    // {/* {sessionDate.month}/{sessionDate.day} {sessionDate.hour} {sessionDate.shortTZ} */}

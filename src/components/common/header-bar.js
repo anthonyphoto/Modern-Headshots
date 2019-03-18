@@ -12,22 +12,17 @@ function logOut(e, props){
 }
 
 export function HeaderBar(props) {
-    // console.log("header props", props);
-    // const bgClass = `${props.currPath}`;
-    // const bgClass ="hd-wrapper bg-peach";
     const bgClass = props.currPath.slice(0, 7) === "/myacct"? 
                 "hd-wrapper bg-peach" : "hd-wrapper bg-white";
 
-    let logOutButton, myAcctLink;
+    let myAcctLink;
 
     if (props.loggedIn) {
         myAcctLink = (
             <React.Fragment>
                 <Link to="/myacct">MY ACCOUNT</Link> &nbsp;
-                <a onClick={e=>logOut(e, props)} className="hd-spc" href="#"><img className="signout" src="/img/signout.png" alt="sign out" /></a>
-
+                <a onClick={e=>logOut(e, props)} className="hd-spc" href=""><img className="signout" src="/img/signout.png" alt="sign out" /></a>
             </React.Fragment>
-
         );
     }
     else {
@@ -40,15 +35,14 @@ export function HeaderBar(props) {
         <header className={bgClass} role="banner">
             <div className="hd fi">
                 <Link to="/">
-                    <img className="logo" src='/img/adlogo.png' alt='anthony photo logo' />
+                    <img className="logo" src='/img/adlogo.png' alt='anthony photography logo' />
                 </Link>
-                <nav className="hd-div" role="navigation">
+                <nav className="hd-div">
                     <Link className="hd-spc" to="/intro">INTRO</Link>
                     <Link className="hd-spc" to="/calendar">SCHEDULE</Link>
                     {myAcctLink}
                 </nav>
             </div>
-            {/* <div className="hr-linew"></div> */}
         </header>
     );
 }

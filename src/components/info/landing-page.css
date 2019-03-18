@@ -175,6 +175,7 @@ li.list::before {
 
   .al-r {
     text-align: center;
+    width: 95%;
   }
   
   .normal {
@@ -190,6 +191,7 @@ li.list::before {
     text-indent: -1.7rem;
     margin-top: 1.5rem;
     margin-left: 0rem;
+    margin-right: 1rem;
   }
   
   li.list::before {

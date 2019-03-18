@@ -3,10 +3,8 @@ import {connect} from 'react-redux';
 import CalendarSec from './calendar-sec';
 import SideSec from './side-sec';
 import ErrorSec from '../common/error-sec';
-import LoadingSec from '../common/loading-sec';
 import {fetchEvents, resetEventState} from '../../actions/schedule';
 import {hoverEvent, updateStartWeek} from '../../actions/schedule';
-import requiresLogin from '../user/requires-login';
 
 export class SchedulePage extends React.Component {
     constructor(props) {
@@ -15,7 +13,6 @@ export class SchedulePage extends React.Component {
         this.props.dispatch(resetEventState());
 
     }
-
 
     componentDidUpdate() {
         if (this.props.redirect) this.props.history.push(this.props.redirect);
@@ -35,9 +32,7 @@ export class SchedulePage extends React.Component {
         }
     }
 
-
     render() {
-        console.log("currEvent from schedule", this.props.currEvent);
         let status, id, phone, sessionDate, shootType, submitter, email, updated;         
         if (this.props.hoverEvent && this.props.hoverEvent.status !== 'Unavailable') {
             sessionDate = this.props.hoverEvent.sessionDate;
@@ -54,71 +49,59 @@ export class SchedulePage extends React.Component {
             return  <ErrorSec err={this.props.error} />
         }
 
-        
-        // if (this.props.loading) {
-        //     return <LoadingSec />
-        // }
-
         let loadingJsx = "";
         if (this.props.loading) {
             loadingJsx = (
                 <div className="loading">
-                    <img src="/img/loading-1.gif" />
+                    <img src="/img/loading-1.gif" alt="loading" />
                 </div>
             )
         }
 
         return (
             <React.Fragment>
-
-            <div className="hr-line"></div>
-            <div className="row fi">
-            {loadingJsx}
-
-                <div className="mgt-6"></div>
-                <CalendarSec />
-                
-                <div className="side-box fi">
-                    <div className='fine-txt'>{sessionDate}</div>
-
-                {
-                    this.props.currEvent? 
-                        this.props.currEvent.status==='Available'?
-                            <div>
-                                <div className='cal-status-av i mgt-1'>
-                                    Available
-                                </div>
-                                <div>                              
-                                    <SideSec />
-                                </div>
-                            </div>
-                        :
-                            <div>
-                                <div className='cal-status-bk i mgt-1'>
-                                Already Booked
-                         
-                                </div>
-                                <div>                              
-                                    <SideSec />
-                                </div>
-                            </div>
-                    :
-                            <div className="mgt-4">
-                                <div className='side-box-msg cal-h3 i bg-na-sel'>
-                                Please click an available slot on the calendar
-                                </div>
-                                <div>                              
-                                    {/* <SideSec /> */}
-                                </div>
-                            </div>
-
-                }
-
+                <div className="hr-line"></div>
+                <div className="row fi">
+                    {loadingJsx}
+                    <div className="mgt-6"></div>
+                    <CalendarSec />
+                    
+                    <div className="side-box fi">
+                        <div className='fine-txt'>{sessionDate}</div>
+                        {
+                            this.props.currEvent? 
+                                this.props.currEvent.status==='Available'?
+                                    <div>
+                                        <div className='cal-status-av i mgt-1'>
+                                            Available
+                                        </div>
+                                        <div>                              
+                                            <SideSec />
+                                        </div>
+                                    </div>
+                                :
+                                    <div>
+                                        <div className='cal-status-bk i mgt-1'>
+                                        Already Booked
+                                
+                                        </div>
+                                        <div>                              
+                                            <SideSec />
+                                        </div>
+                                    </div>
+                            :
+                                    <div className="mgt-4">
+                                        <div className='side-box-msg cal-h3 i bg-na-sel'>
+                                        Please click an available slot on the calendar
+                                        </div>
+                                        <div>                              
+                                            {/* <SideSec /> */}
+                                        </div>
+                                    </div>
+                        }
+                    </div>
+                    <div className="clear-float"></div>
                 </div>
-
-                <div className="clear-float"></div>
-
-            </div>
             </React.Fragment>
         );
     }
@@ -126,20 +109,14 @@ export class SchedulePage extends React.Component {
 
 const mapStateToProps = state => {
     const {events, currEvent, timeZone, loading, error, redirect} = state.schedule;
-    
-    // console.log("curr", currEvent);
     return {
         events,
         currEvent,
         timeZone,
         loading,
         error,
-        redirect,
-        hoverEvent: state.schedule.hoverEvent,
+        redirect
     };
 };
 
 export default connect(mapStateToProps)(SchedulePage);
-// export default requiresLogin()(connect(mapStateToProps)(SchedulePage));
-// currEvent: state.schedule.events[0],
-// date: state.schedule.events[0].sessionDate,

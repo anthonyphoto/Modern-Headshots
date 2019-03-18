@@ -8,7 +8,6 @@ import {normalizePhone} from '../common/normalizers';
 
 import './book-page.css';
 import '../common/form.css';
-import {Link} from 'react-router-dom';
 
 const titleLength = length({min: 3, max: 25});
 
@@ -20,7 +19,6 @@ export class BookForm extends React.Component {
 
     onSubmit(values) {
         const {eventTitle, eventPhone, specialNote} = values;
-        console.log("passed values:", eventTitle, specialNote);
 
         const eventId = this.props.currEvent.id;
 
@@ -30,16 +28,11 @@ export class BookForm extends React.Component {
             eventTitle,
             specialNote
         }
-        console.log(eventId, event);
         this.props.dispatch(bookEvent(eventId, event));
     }
 
-    /* defing sign-in or sign-up */
- 
     render() {
-        const {id:userid, firstName, lastName, phone, username:email} = this.props.currUser;
-        console.log("currUser", userid, email);
-        console.log("currEvent", this.props.currEvent);
+        const {id:userid, username:email} = this.props.currUser;
  
         return (
             <form className="form mgt-2" onSubmit={this.props.handleSubmit(values=>
@@ -79,19 +72,6 @@ export class BookForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     BOOK
                 </button>
-
-                {/* <Field /> */}
-
-                {
-        // "photoLink": [],
-        // "sessionDate": "2019-03-04T14:00:01.000Z",
-        // "shootType": "Headshots",
-        // "eventTitle": "Diane's Headshots2",
-        // "price": 52,
-        // "status": "Booked2",
-        // "submitter": "5c7bf1d2936fd96128c2802c",
-        // "specialNote": "I need an outdoor shot again.",
-    }
             </form>
         );
     }
@@ -99,27 +79,20 @@ export class BookForm extends React.Component {
 
 const mapStateToProps = state => {
 
-    const {events, currEvent, timeZone, loading, error, redirect} = state.schedule;
-    // console.log("curr", currEvent);
-    // console.log("state", state);
-
+    // const {currEvent} = state.schedule;
     return {
         currUser: state.auth.currentUser,
-        events,
-        currEvent,
-        timeZone,
-        loading,
-        error,
-        redirect,
+        // events,
+        currEvent: state.schedule.currEvent,
+        // timeZone,
+        // loading,
+        // error,
+        // redirect,
     };
 };
 
 export default reduxForm({
-    form: 'book',
-    onSubmitFail: (error, dispatch) => dispatch(focus('book', Object.keys(error[0])))
-})(connect(mapStateToProps)(BookForm));
+        form: 'book',
+        onSubmitFail: (error, dispatch) => dispatch(focus('book', Object.keys(error[0])))
+    })(connect(mapStateToProps)(BookForm));
 
-// export default connect(mapStateToProps)(BookForm);
-// export default requiresLogin()(connect(mapStateToProps)(SchedulePage));
-// currEvent: state.schedule.events[0],
-// date: state.schedule.events[0].sessionDate,

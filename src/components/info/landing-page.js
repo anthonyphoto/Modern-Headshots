@@ -1,13 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './landing-page.css';
 
-export class LandingPage extends React.Component{
-    // If we are logged in redirect straight to the user's dashboard
-    // if (props.loggedIn) {
-    //     return <Redirect to="/dashboard" />;
-    // }
+export default class LandingPage extends React.Component{
 
     componentDidMount() {
         window.scrollTo(0,0);
@@ -17,7 +13,7 @@ export class LandingPage extends React.Component{
         return (
             <div className="row fi">
                 <div className="img-main">
-                    <img src="/img/title-1.jpg" className="img-main" alt="main photo" />
+                    <img src="/img/title-1.jpg" className="img-main" alt="main-photo" />
                     <div className="pos-title">
                     <span className='title'>Modern<br/>&nbsp;&nbsp; Headshots<br/></span>
                     </div>
@@ -26,11 +22,6 @@ export class LandingPage extends React.Component{
                     <Link to='/calendar'>Schedule Now</Link></div>
                 </div>
                 <div>
-                    {/* <div className="h2 i mgt-6 al-r">
-                    </div> */}
-                    {/* <div className="h2">
-                    Did you know? */}
-                    
                     <div className="mgt-6 flt">
                         <div className="div-l mgt-2">
                             <img className="img-main" src="/img/sample1.png" alt="headshot sample" />
@@ -55,17 +46,9 @@ export class LandingPage extends React.Component{
                             </ul>
                         </div>
                     </div>
-                    {/* <div className="flt-clr">
-                    </div> */}
                 </div>
             </div> 
         );
     }
 }
 
-
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(LandingPage);

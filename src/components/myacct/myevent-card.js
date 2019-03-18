@@ -10,7 +10,6 @@ export class MyeventCard extends React.Component{
         this.state = {
             confirmCancelRequest: false
         }
-
     }
 
     confirmDeleteRequest(e) {
@@ -33,8 +32,7 @@ export class MyeventCard extends React.Component{
     }
 
     render(){
-        console.log("render", this.state.confirmCancelRequest);
-        /* Shoe cancel request page */
+        /* Show cancel request page */
         if (this.state.confirmCancelRequest){
             return (
                 <div className="event-box bg-gray fi">
@@ -47,8 +45,8 @@ export class MyeventCard extends React.Component{
                         </div>
                     </div>
                     <div className="ma-spc-l mgt-1">
-                        <a onClick={e=>this.confirmDelete(e)} className="ma-btn-lk" href="#">Delete</a> &nbsp;&nbsp;&nbsp;
-                        <a onClick={e=>this.cancelDeleteRequest(e)} className="ma-btn-lk" href="#">Go Back</a>
+                        <a onClick={e=>this.confirmDelete(e)} className="ma-btn-lk" href="delete">Delete</a> &nbsp;&nbsp;&nbsp;
+                        <a onClick={e=>this.cancelDeleteRequest(e)} className="ma-btn-lk" href="back">Go Back</a>
                     </div>
                 </div>
             );
@@ -68,9 +66,9 @@ export class MyeventCard extends React.Component{
                     <div className="ev-bottom">
                         <div>{this.props.sessionDate}</div>
                         {   
-                            this.props.eventType === "future"?
-                                <a onClick={e => this.confirmDeleteRequest(e)} className="ma-img-lk" href="#">
-                                    <img src="/img/trash.png" />
+                            this.props.eventType === "future" ?
+                                <a onClick={e => this.confirmDeleteRequest(e)} className="ma-img-lk" href="">
+                                    <img src="/img/trash.png" alt="delete" />
                                 </a>
                             :
                                 this.props.photoYN?
@@ -85,7 +83,6 @@ export class MyeventCard extends React.Component{
 }
 
 const mapStateToProps = state => {
-    // const {currentUser} = state.auth;
     return {
         currUser: state.auth.currentUser,
         pastEvents: state.schedule.pastEvents,

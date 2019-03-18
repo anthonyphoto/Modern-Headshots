@@ -14,8 +14,6 @@ export class MygalleryPage extends React.Component {
     
 
     render() {
-        // console.log("photoLink", this.props.photoLink);
-        console.log("currEvent", this.props.currEvent);
 
         if (this.props.error) {
             return  <ErrorSec err={this.props.error} />
@@ -24,32 +22,23 @@ export class MygalleryPage extends React.Component {
         if (this.props.loading) {
             return <LoadingSec />
         }
-        // let loadingJsx = "";
-        // if (this.props.loading) {
-        //     loadingJsx = (
-        //         <div className="loading">
-        //             <img src="/img/loading-1.gif" />
-        //         </div>
-        //     )
-        // }
             
-        const eventTitle = this.props.currEvent? this.props.currEvent.eventTitle : "";
-        const sessionDate = this.props.currEvent? new Date(this.props.currEvent.sessionDate).toLocaleString('en-US', {timeZoneName: "short"}): "";
-        console.log("props", this.props); // const photoLink = this.props.photoLink?
+        const eventTitle = this.props.currEvent ? this.props.currEvent.eventTitle : "";
+        
+        const sessionDate = this.props.currEvent ? new Date(this.props.currEvent.sessionDate).toLocaleString('en-US', {timeZoneName: "short"}): "";
+        
         const photoJsx = this.props.photoLink.map((photo, ind) => {
             return (
                 <div key={ind} className="mg-photo-div">
-                    <img className="gallery-frame" src={photo} alt={`sample photo ${ind + 1}`} />
+                    <img className="gallery-frame" src={photo} alt={`sample ${ind + 1}`} />
                 </div>
             )
         });
 
         return (
             <div className='bg-peach bd'>
-
                 <div className="hr-line"></div>
                 <div className="row fi">
-                {/* {loadingJsx} */}
                     <div className="mg-al-m">
                         <div className="mg-h2 i">
                             {eventTitle}

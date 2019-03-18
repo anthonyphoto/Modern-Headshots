@@ -91,7 +91,6 @@ export const fetchEvents = () => dispatch => {
         .then(res=>normalizeResponseErrors(res))
 .then(res=>new Promise( (resolve) => setTimeout(()=> resolve(res), 500)))  //loading test
         .then(res => res.json())
-        // .then(events => setTimeout(events, 2000))
         .then(events => dispatch(fetchEventsSuccess(events)))
         .catch(err => dispatch(fetchError(err)));
 }

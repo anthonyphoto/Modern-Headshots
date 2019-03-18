@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {resetRedirect} from '../../actions/schedule';
 import ErrorSec from '../common/error-sec';
@@ -20,12 +19,10 @@ export class BookPage extends React.Component {
     }
 
     componentDidMount() {
-        
         window.scrollTo(0,0);
         /* If page was redirected, reset redirect link */
         if (this.props.redirect === '/book') this.props.dispatch(resetRedirect());
         if (!this.props.currEvent) this.props.history.push('/calendar');
-
     }
 
     /* defing sign-in or sign-up */
@@ -37,8 +34,6 @@ export class BookPage extends React.Component {
     }
 
     render() {
-
-        console.log("this.state",this.state);
         const status = (this.props.currEvent)? this.props.currEvent.status: "";
         if (this.props.error) {
             return  <ErrorSec err={this.props.error} />
@@ -48,12 +43,11 @@ export class BookPage extends React.Component {
         if (this.props.loading) {
             loadingJsx = (
                 <div className="loading">
-                    <img src="/img/loading-1.gif" />
+                    <img src="/img/loading-1.gif" alt="loading" />
                     Loading
                 </div>
             )
         }
-
     
         return (
         <React.Fragment>
@@ -64,7 +58,7 @@ export class BookPage extends React.Component {
                     {
                         status === "Available"?
                             <div className="book-h3 i book-al-r">
-                                Let's plann to make you look amazing
+                                Let's plan to make you look amazing
                             </div>
                         :
                             <div className="book-h3 i book-al-r">
@@ -76,8 +70,6 @@ export class BookPage extends React.Component {
                     </div>
                 </div>
                 <div className="book-div">
-                    {/* <div className="book-h3">
-                    </div> */}
                     <div className="book-font mgt-1">
                         {
                             this.props.currUser?
@@ -94,9 +86,6 @@ export class BookPage extends React.Component {
                                         <li>
                                             Plan to arrive 10 min early before the scheduled time
                                         </li>
-                                        {/* <li>
-                                            If you want to update your contact info, please go to <Link className="book-spc-l" to="/myacct">My Account</Link> page 
-                                        </li> */}
                                         <li>
                                             Address: 61 Llanfair Road, Ardmore, PA 19003<br/>
                                         </li>
@@ -104,23 +93,18 @@ export class BookPage extends React.Component {
                                             Phone: 267-347-0245<br/>
                                         </li>
                                     </ul>
-
-
-
-
                                     </div>
                             :
                                 <div>
-                                    Please sign in first
                                     {
                                         this.state.signType ==='signin'?
-                                            <div>
+                                            <div>Plase sign in first 
                                                 <LoginForm />
                                                 <p className="book-txt">&nbsp;&nbsp;&nbsp; Don't have an account? &nbsp;
                                                 <a href="#" onClick={e=>this.setSignType(e, "signup")}>Sign up here</a></p>
                                             </div>
                                         :
-                                            <div>
+                                            <div>Member Registration
                                                 <RegistrationForm />
                                                 <p className="book-txt">&nbsp;&nbsp;&nbsp; Already have an account?
                                                  &nbsp;
@@ -141,14 +125,11 @@ export class BookPage extends React.Component {
 
 const mapStateToProps = state => {
     
-    const {events, currEvent, timeZone, loading, error, redirect} = state.schedule;
-    // console.log("curr", currEvent);
+    const {currEvent, loading, error, redirect} = state.schedule;
 
     return {
         currUser: state.auth.currentUser,
-        events,
         currEvent,
-        timeZone,
         loading,
         error,
         redirect,
@@ -156,6 +137,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(BookPage);
-// export default requiresLogin()(connect(mapStateToProps)(SchedulePage));
-// currEvent: state.schedule.events[0],
-// date: state.schedule.events[0].sessionDate,

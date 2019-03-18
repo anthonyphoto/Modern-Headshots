@@ -45,7 +45,6 @@ export class App extends React.Component {
     }
 
     render() {
-        console.log('prop', this.props.location.pathname)
         const bgClass = this.props.location.pathname.slice(0,7) === "/myacct"? 
             "bg-peach bd" : "bg-white bd";
 

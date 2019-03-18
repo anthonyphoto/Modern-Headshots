@@ -1,20 +1,14 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './intro-page.css';
 
-export class IntroPage extends React.Component {
+export default class IntroPage extends React.Component {
 
-    // If we are logged in redirect straight to the user's dashboard
-    // if (props.loggedIn) {
-    //     return <Redirect to="/dashboard" />;
-    // }
     componentDidMount(){
         window.scrollTo(0,0);
     }
 
     render(){
-
         return (
             <div className="fi bg-img">
                 <div className="row info-div bd">
@@ -26,7 +20,6 @@ export class IntroPage extends React.Component {
                         <div className="box-div mgt-4">
                             <p className='txt'>Hi there! <br/>
                             Thank you for visiting my site.</p>
-
                             <p className='txt'>
                                 Although my main profession is a software engineer as shown on my <a href="https://www.linkedin.com/in/myanthony/" target="_blank">LinkedIn</a>, I am also a photo enthusiast.  
                             </p>
@@ -42,7 +35,7 @@ export class IntroPage extends React.Component {
 
                             <div className='int-h2 i'>1. Schedule</div>
                             <ul>
-                                <li className='txt'>Please book your session from here <Link className="info-spc-l no-undln" to="/calendar"> > </Link></li>
+                                <li className='txt'>Please book your session here <Link className="info-spc-l no-undln" to="/calendar"> > </Link></li>
                                 <li className='txt'>I apologize for my limited availability</li>
                             </ul>
                             <div className='int-h2 i'>2. Shoot</div>
@@ -54,7 +47,7 @@ export class IntroPage extends React.Component {
                             <div className='int-h2 i'>3. Deliver</div>
                             <ul>
                                 <li className='txt'>Your pictures will be ready within 72 hours</li>
-                                <li className='txt'>You can view and download your pictures form "My Account" page</li>
+                                <li className='txt'>You can view and download your pictures from "My Account" page</li>
                             </ul>
                             <div className=".info-full-with">
                                 <img src="/img/result-1.png" className="info-img" alt="shoot result" />
@@ -68,10 +61,3 @@ export class IntroPage extends React.Component {
         );
     }
 }
-
-
-const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(IntroPage);

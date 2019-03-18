@@ -109,7 +109,15 @@ a.ma-img-lk:focus{
   opacity: 1;
 }
 
+.ma-txt2 {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -0.0rem; 
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+  line-height: 1.6rem;
+  /* text-shadow: 1px 1px 1px #000; */
 
+}
 
 .ma-flx {
   display: flex;
@@ -250,6 +258,12 @@ li.ma-txt::before {
   .ma-flx {
     display: block;
   }
-  
+
+  .ma-box {
+    /* width: 40%; */
+    min-width: 340px;
+    padding: 0.3%;
+    min-height: 5rem;
+  }
 }
 

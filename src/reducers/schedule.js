@@ -1,5 +1,5 @@
 import * as actions from '../actions/schedule';
-import {getStartDt, initGrid, getGrid, setResultToCurrEvent, getPastEvents, getFutureEvents} from '../components/schedule/calendar-utils';
+import {initGrid, getGrid, setResultToCurrEvent, getPastEvents, getFutureEvents} from '../components/schedule/calendar-utils';
 
 
 const initialState = {
@@ -11,13 +11,11 @@ const initialState = {
     currEvent: null,
     timeZone: 'America/New_York',
     redirect: null,
-    click: false,
     loading: false,
     error: null
 };
 
 export default function reducer(state = initialState, action) {
-    // console.log("from Reducer: " , getStartDt(state.startWeek));
     switch(action.type) {
 
         case actions.FETCH_REQUEST: 
@@ -56,7 +54,6 @@ export default function reducer(state = initialState, action) {
             });
 
         case actions.BOOK_EVENT_SUCCESS: 
-            // console.log("from reducer - event", action.event);
             return Object.assign({}, state, {
               currEvent: setResultToCurrEvent(action.event, state.timeZone),
               loading:  false,
@@ -64,8 +61,6 @@ export default function reducer(state = initialState, action) {
             });
 
         case actions.FETCH_CANCEL_SUCCESS: 
-            console.log("from reducer - event", action.event);
-            console.log("from reducer - state.events", state.futureEvents);
             return Object.assign({}, state, {
               futureEvents: state.futureEvents.filter(event => event._id !== action.event._id),
               loading:  false,
@@ -87,7 +82,6 @@ export default function reducer(state = initialState, action) {
         });
         
         case actions.HOVER_EVENT:
-          // console.log("gridIndex", action.gridIndex[0], action.gridIndex[1]);
           return Object.assign({}, state, {
               currEvent: action.gridIndex?
                 state.grid[action.gridIndex[0]][action.gridIndex[1]]:
@@ -110,8 +104,6 @@ export default function reducer(state = initialState, action) {
           });
 
         case actions.RESET_EVENT_STATE:
-          // return state; // testing purpose for error handling
-          // return initialState;   
           return Object.assign({}, initialState, {
             loading: state.loading,
             error: state.error
@@ -121,5 +113,3 @@ export default function reducer(state = initialState, action) {
             return state;
     }
 }
-
-// state.grid[action.gridInex[0]][action.gridIndex[1]]:

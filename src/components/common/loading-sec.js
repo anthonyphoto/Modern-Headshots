@@ -10,7 +10,7 @@ export default function LoadingSec (props) {
             <div className="row mgt-6">
                 <div className="loading-sec">
                     <div>
-                        <img src="/img/loading-6.gif" alt="loading image" />
+                        <img src="/img/loading-6.gif" alt="loading" />
                     </div>
                     <div className="loading-h2">
                         Loading...
