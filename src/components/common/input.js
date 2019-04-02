@@ -6,7 +6,7 @@ export default class Input extends React.Component {
             this.input.focus();
         }
     }
-
+    
     render() {
         const Element = this.props.element || 'input';
         let error;
@@ -21,6 +21,16 @@ export default class Input extends React.Component {
             );
         }
         
+        // let inp = {}
+        // if (this.props.defaultValue) {
+        //     Object.keys(this.props.input).forEach(key => 
+        //         (key === "value") ? inp["defaultValue"] = this.props.defaultValue : inp[key] = this.props.input[key]
+        //     );
+        // } 
+        // else {
+        //     inp = this.props.input;
+        // }
+
         return (
             <div className="form-input">
                 <label htmlFor={this.props.input.name}>
@@ -39,11 +49,11 @@ export default class Input extends React.Component {
                     className={this.props.className}
                     placeholder={this.props.placeholder}
                     rows={this.props.rows}
-                    ref={input => (this.input = input)
-                    }
+                    ref={input => (this.input = input)}
                 />
             </div>
         );
     }
 }
                     
+// {...this.props.input}
